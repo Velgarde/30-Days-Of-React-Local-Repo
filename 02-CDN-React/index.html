@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>30 Days Of React</title>
+<!--    import fonts from the url-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Roboto:300,400,500&display=swap" rel="stylesheet"/>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0
+        }
+
+        html, body {
+            height: 100%;
+            line-height: 1.5;
+            /*sets the font family to 'Montserrat' for all text within the <html> and <body> elements. If 'Montserrat' is not available, it falls back to a serif font.*/
+            font-family: 'Montserrat',serif;
+            font-weight: 300;
+            color: black
+        }
+
+        .root{
+            min-height: 100%;
+            /*sets the position of the element to relative, allowing other elements to be positioned relative to it*/
+            position: relative
+        }
+
+        .header-wrapper, .main-wrapper, .footer-wrapper {
+            width: 85%;
+            /*centers these elements horizontally within their parent by setting the left and right margins to auto*/
+            margin:auto;
+        }
+
+
+        .header-wrapper, .main-wrapper {
+            padding: 10px;
+            margin: 2px auto;
+        }
+
+        h1 {
+            font-size: 70px;
+            font-weight: 300
+        }
+
+        h2, h3 {
+            font-weight: 300
+        }
+
+        header {
+            background-color: #61dbfb;
+            padding: 10px;
+        }
+
+        main {
+            padding: 10px;
+            padding-bottom: 60px;
+        }
+
+        ul {
+            margin-left: 15px;
+        }
+
+        ul, li {
+            list-style: none;
+        }
+
+        footer {
+            position: absolute; /*positions the <footer> element absolutely, relative to its closest positioned ancestor*/
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            background: #6cf;
+        }
+
+        .footer-wrapper{
+            font-weight: 400;
+            text-align: center;
+            line-height: 60px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class = "root"></div>
+<!--    React-->
+    <script
+            crossorigin
+            src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+<!--    ReactDOM-->
+    <script
+            crossorigin
+            src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+<!--    Babel-->
+    <script src = "https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+
+
+        const rootElement = document.querySelector('.root');
+
+
+        const header = (
+            <header>
+                <div className="header-wrapper">
+                <h1>I am a JSX Element</h1>
+                <h2>Getting Started to React</h2>
+                <h3>Javascript Library</h3>
+                <p>Mriganka Dey</p>
+                <small>Sep 21, 2023</small>
+                </div>
+            </header>
+        )
+
+        const main = (
+            <main>
+                <div className="main-wrapper">
+                <p>Prerequisites to getting started with{' '}
+                    <strong>
+                        <em>React.js</em>
+                    </strong> {' '}
+                    :
+                </p>
+
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+                </div>
+            </main>
+        )
+
+        const footer = (
+            <footer>
+                <div className="footer-wrapper">
+                <p>Copyright 2023</p>
+                </div>
+            </footer>
+        )
+
+        const App = (
+            <div className="app">
+                {header}
+                {main}
+                {footer}
+            </div>
+        )
+        ReactDOM.render(App, rootElement);
+    </script>
+</body>
+</html>
